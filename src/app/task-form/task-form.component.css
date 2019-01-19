@@ -1,0 +1,12 @@
+label {
+    display: inline-block;
+    width: 500px;
+}
+.alert {
+    background-color: #ff9999;
+    border: 1px solid red;
+    margin: 4px;
+}
+form {
+    width: 1000px;
+}

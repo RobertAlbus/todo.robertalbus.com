@@ -2,11 +2,13 @@ label {
     display: inline-block;
     width: 500px;
 }
-.alert {
-    background-color: #ff9999;
+.error {
     border: 1px solid red;
-    margin: 4px;
 }
-form {
-    width: 1000px;
+input {
+    border: 1px solid white;
+    background-color: #f3f3f3;
+}
+input:focus {
+    border: 1px solid #4444ff;
 }

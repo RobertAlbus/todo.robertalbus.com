@@ -37,10 +37,9 @@ export class TaskList implements OnInit {
     this.addTask(new Task( "Poplate lists", "Use one-way databinding to populate lists. *ngIf(task.completed) for sorting to each list.", true));
     this.addTask(new Task( "Create new-task form", "Form for new tasks with name, description, and checkbox for complete-status", true));
     this.addTask(new Task( "Create delete button", "Update task list to include everything except the current task (filter by taskId)", true));
-    this.addTask(new Task( "clean up css", "make list scrollable without losing title"));
-    this.addTask(new Task( "Keep list title from scrolling", "better organization the css in general"))
-    this.addTask(new Task( "Modify css", "Make Mobile Responsive"));
-    this.addTask(new Task( "Implement persistence mechanism", "Cookies"));
+    this.addTask(new Task( "Clean up css", "make list scrollable without losing title", true));
+    this.addTask(new Task( "Modify css", "Make somewhat mobile responsive",true ));
+    this.addTask(new Task( "Implement persistence mechanism", ""));
   }
 
 }

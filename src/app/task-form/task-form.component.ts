@@ -19,9 +19,7 @@ import { Task } from '../task.interface';
 export class TaskForm implements OnInit {
 
   form: FormGroup;
-  name: AbstractControl;
-  description: AbstractControl;
-  completed: AbstractControl;
+
 
   @Output() newTask: EventEmitter<Task>;
   @HostBinding('class') classes = 'form-group';
@@ -32,15 +30,12 @@ export class TaskForm implements OnInit {
       'description' : ['',],
       'completed'   : [false, Validators.required]
     })
-
-    // this.name = this.form.controls['name'];
-    // this.description = this.form.controls['description'];
-    // this.completed = this.form.controls['completed'];
     this.newTask = new EventEmitter<Task>();
   }
 
   onSubmit(form: FormGroup) {
-
+    //to display an error when submit button pressed but title is (empty && !touched)
+    //because error display relies on name.touched
     this.form.controls.name.markAsTouched();
 
     if (form['name'] != '') {

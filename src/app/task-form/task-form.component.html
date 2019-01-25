@@ -2,28 +2,28 @@
       (ngSubmit)="onSubmit(form.value)"
       autocomplete="off"
       class="form">
-  <div class="form-group">    
+  <div class="form-group">
     <label for="nameInput">Name</label>
     <input  type="text"
             class="form-control input-sm"
             id="nameInput"
             placeholder="Task Name"
-            [formControl]="form.controls['name']">
+            [formControl]="form.controls['name']"
+            [class.error]="!form.controls['name'].valid && form.controls['name'].touched ">
     <br>
     <label  for="descriptionInput">Description</label>
     <input  type="text"
             class="form-control input-sm"
             id="descriptionInput"
-            placeholder="Description for task"
-            [formControl]="description">
+            placeholder="(Optional)"
+            [formControl]="form.controls['description']">
     <br>
     <label  for="completedInput">Completed</label>
     <input  type="checkbox"
             class="form-control input-sm"
             id="completedInput"
-            [formControl]="completed">
-    <div *ngIf="!form.valid && form.controls['name'].touched" class="alert">Please enter a task name</div>
-    <hr>
+            [formControl]="form.controls['completed']">
+            <hr>
     <button type="submit">Submit</button>
   </div>
 </form>

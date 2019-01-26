@@ -24,7 +24,7 @@
 a {
     color: white;
     border: 1px solid white;
-    padding: 1px;
+    padding: 1px 4px;
     text-decoration: none;
 }
 a:hover {
@@ -40,4 +40,13 @@ h2 {
     word-wrap: break-word;
     white-space: initial;
 
+}
+#about a {
+    color: black;
+    border: 1px solid;
+    padding: 1px 4px;
+}
+#about a:hover {
+    color: #ffffff;
+    background-color: #3d3d3d;
 }

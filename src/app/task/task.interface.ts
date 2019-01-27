@@ -8,5 +8,9 @@ export class Task {
         this.completed = !this.completed;
         return this;
     }
-    constructor(){}
+    constructor(name: string, description: string, completed: boolean = false){
+        this.name           = name;
+        this.description    = description;
+        this.completed      = completed;
+    }
 }

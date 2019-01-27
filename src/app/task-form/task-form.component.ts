@@ -9,7 +9,7 @@ import {
   FormGroup, 
   Validators, 
   AbstractControl} from '@angular/forms';
-import { Task } from '../task-list/task.interface';
+import { Task } from '../task/task.interface';
 
 @Component({
   selector:     'task-form',

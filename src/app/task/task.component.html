@@ -1,5 +1,3 @@
-<div (click)="task.toggleComplete()">
-  <h2>{{ name }}</h2>
-  <p>{{ description }}</p>
-  <a href="#" (click)="deleteTask(task)">delete</a>
-</div>
+  <h2>{{ task.name }}</h2>
+  <p>{{ task.description }}</p>
+  <a href="#" (click)="delete()">delete</a>

@@ -3,13 +3,15 @@ import {
   OnInit, 
   Output, 
   EventEmitter, 
-  HostBinding} from '@angular/core';
+  HostBinding,
+  Inject} from '@angular/core';
 import {
   FormBuilder, 
   FormGroup, 
   Validators, 
   AbstractControl} from '@angular/forms';
 import { Task } from '../task/task.interface';
+import { TaskManagerService } from '../task-manager/task-manager.service';
 
 @Component({
   selector:     'task-form',
@@ -19,18 +21,16 @@ import { Task } from '../task/task.interface';
 export class TaskForm implements OnInit {
 
   form: FormGroup;
-
-
-  @Output() newTask: EventEmitter<Task>;
+  TaskManager: TaskManagerService;
   @HostBinding('class') classes = 'form-group';
 
-  constructor(fb: FormBuilder) {
+  constructor(@Inject(TaskManagerService) TaskManager, fb: FormBuilder) {
+    this.TaskManager = TaskManager;
     this.form = fb.group({
       'name'        : ['', Validators.required],
       'description' : ['',],
       'completed'   : [false, Validators.required]
     })
-    this.newTask = new EventEmitter<Task>();
   }
 
   onSubmit(form: FormGroup) {
@@ -45,7 +45,7 @@ export class TaskForm implements OnInit {
       newTask.description = form['description'];
       newTask.completed   = form['completed'];
       console.log(newTask);
-      this.newTask.emit(newTask);
+      this.TaskManager.addTask(newTask);
       this.clearForm();
   }}
 

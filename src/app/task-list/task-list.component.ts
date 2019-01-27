@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { Task } from '../task/task.interface';
 import { TaskComponent } from '../task/task.component'
 
@@ -11,16 +11,9 @@ export class TaskList implements OnInit {
 
   @Input() taskList: Task[];
   @Input() title: string;
-
   
   constructor() {
-    this.taskList = [];
   }
-  deleteTask(task: Task): boolean {
-    this.taskList = this.taskList.filter(t => t.taskId != task.taskId);
-    return false;
-  }
-
 
   ngOnInit() {
     // this.addTask(new Task( "Complete this task", "Click on this task to move it to the other side"))

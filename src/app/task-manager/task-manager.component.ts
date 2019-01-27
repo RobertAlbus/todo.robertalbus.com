@@ -13,7 +13,10 @@ export class TaskManagerComponent implements OnInit {
   
   constructor() {
     this.taskIdCounter = 0;
-    this.taskList = [];
+    this.taskList = [
+      new Task("First Task", "nothing before it"),
+      new Task("second Task", "something before it", true)
+    ];
   }
   newTask(newTask: Task): void {
     newTask.taskId = this.taskIdCounter++;

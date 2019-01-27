@@ -1,14 +1,15 @@
 <div class="container-fluid">
   <div class="row">
     <task-list 
-            [taskList]="completeTasks()"
+            [taskList]="incompleteTasks()"
+            [title]="'To Do'"
             class="col-lg-4"></task-list>
     <task-list 
-            [taskList]="incompleteTasks()"
+            [taskList]="completeTasks()"
+            [title]="'Done'"
             class="col-lg-4"></task-list>
     <task-form 
             (newTask)="newTask( $event )"
             class="col-lg-4"></task-form>
   </div>
-
 </div>

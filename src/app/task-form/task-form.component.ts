@@ -1,14 +1,14 @@
-import { 
-  Component, 
-  OnInit, 
-  Output, 
-  EventEmitter, 
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
   HostBinding,
   Inject} from '@angular/core';
 import {
-  FormBuilder, 
-  FormGroup, 
-  Validators, 
+  FormBuilder,
+  FormGroup,
+  Validators,
   AbstractControl} from '@angular/forms';
 import { Task } from '../task/task.interface';
 import { TaskManagerService } from '../task-manager/task-manager.service';
@@ -28,18 +28,18 @@ export class TaskForm implements OnInit {
     this.TaskManager = TaskManager;
     this.form = fb.group({
       'name'        : ['', Validators.required],
-      'description' : ['',],
+      'description' : ['', ],
       'completed'   : [false, Validators.required]
-    })
+    });
   }
 
   onSubmit(form: FormGroup) {
-    //to display an error when submit button pressed but title is (empty && !touched)
-    //because error display relies on name.touched
+    // to display an error when submit button pressed but title is (empty && !touched)
+    // because error display relies on name.touched
     this.form.controls.name.markAsTouched();
 
-    if (form['name'] != '') {
-      let newTask = new Task("","")
+    if (form['name'] !== '') {
+      const newTask = new Task('', '');
 
       newTask.name        = form['name'];
       newTask.description = form['description'];

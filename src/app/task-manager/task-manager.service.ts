@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import{ Task } from '../task/task.interface'
-import { TaskList } from '../task-list/task-list.component';
+import { Task } from '../task/task.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -8,24 +7,23 @@ import { TaskList } from '../task-list/task-list.component';
 export class TaskManagerService {
   taskList: Task[];
   taskIdCounter: number;
-  
+
   constructor() {
     this.taskIdCounter = 0;
     this.taskList = [];
-    this.addTask(new Task("First Task", "nothing before it"));
-    this.addTask(new Task("Second Task", "something before it", true))
-
+    this.addTask(new Task('First Task', 'nothing before it'));
+    this.addTask(new Task('Second Task', 'something before it', true));
   }
   addTask(newTask: Task): void {
     newTask.taskId = this.taskIdCounter++;
     this.taskList.push(newTask);
   }
   deleteTask(task: Task) {
-    this.taskList = this.taskList.filter( (item: Task) => item != task )
+    this.taskList = this.taskList.filter( (item: Task) => item !== task );
   }
   toggleComplete(inputTask: Task) {
-    let modifiedTask = this.taskList.filter(task => task == inputTask)[0]
-    this.taskList = this.taskList.filter(task => task != inputTask)
+    const modifiedTask = this.taskList.filter(task => task === inputTask)[0];
+    this.taskList = this.taskList.filter(task => task !== inputTask);
     modifiedTask.completed = !modifiedTask.completed;
     this.taskList.push(modifiedTask);
   }
@@ -34,8 +32,7 @@ export class TaskManagerService {
     return this.taskList.filter( task => task.completed);
   }
   incompleteTasks(): Task[] {
-    return this.taskList.filter( task => !task.completed)
+    return this.taskList.filter( task => !task.completed);
   }
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }

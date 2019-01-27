@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output, inject, Input, Inject, HostListener } from '@angular/core';
 
-import { Task } from './task.interface'
+import { Task } from './task.interface';
 import { TaskManagerService } from '../task-manager/task-manager.service';
 
 @Component({
@@ -11,10 +11,6 @@ import { TaskManagerService } from '../task-manager/task-manager.service';
 export class TaskComponent implements OnInit {
 
   @Input() task: Task;
-  @HostListener('click') onclick() {
-    this.toggleComplete();
-  }
-
   taskManager: TaskManagerService;
 
   constructor(@Inject(TaskManagerService) taskManager) {
@@ -25,6 +21,9 @@ export class TaskComponent implements OnInit {
   }
   delete() {
     this.taskManager.deleteTask(this.task);
+  }
+  @HostListener('click') onclick() {
+    this.toggleComplete();
   }
   ngOnInit() {
   }

@@ -1,3 +1,14 @@
-<p>
-  task-manager works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <task-list 
+            [taskList]="completeTasks()"
+            class="col-lg-4"></task-list>
+    <task-list 
+            [taskList]="incompleteTasks()"
+            class="col-lg-4"></task-list>
+    <task-form 
+            (newTask)="newTask( $event )"
+            class="col-lg-4"></task-form>
+  </div>
+
+</div>

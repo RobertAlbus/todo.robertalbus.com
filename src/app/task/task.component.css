@@ -1,0 +1,26 @@
+
+
+.task {  
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px
+}
+.complete {
+  background-color: #6c6;
+}
+.incomplete {
+  background-color: #f99
+}
+
+#delete {
+  text-decoration: none;
+  padding: 1px 5px;
+  margin: 0px;
+  color: white;
+  border: 1px solid white;
+  text-decoration: none;
+}
+#delete:hover {
+  color: black;
+  background-color: white;
+}

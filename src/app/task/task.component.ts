@@ -1,7 +1,7 @@
-import { Component, OnInit, EventEmitter, Output, inject, Input, Inject, HostListener } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, inject, Input, Inject, HostListener, HostBinding } from '@angular/core';
 
 import { Task } from './task.interface';
-import { TaskManagerService } from '../task-manager/task-manager.service';
+import { TaskManagerService } from '../services/task-manager.service';
 
 @Component({
   selector: 'task',
@@ -16,6 +16,7 @@ export class TaskComponent implements OnInit {
   constructor(@Inject(TaskManagerService) taskManager) {
     this.taskManager = taskManager;
   }
+
   toggleComplete() {
     this.taskManager.toggleComplete(this.task);
   }

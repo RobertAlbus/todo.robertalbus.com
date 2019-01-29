@@ -1,6 +1,19 @@
 label {
     display: inline-block;
+}
+form {
     width: 500px;
+}
+button {
+    color: #2d2d2d;
+    background-color: #fff;
+    border: 1px solid black;
+    box-shadow: none;
+}
+button:hover {
+    color: white;
+    background-color: #999;
+    border-color: #999;
 }
 .error {
     border: 1px solid red;
@@ -11,4 +24,20 @@ input {
 }
 input:focus {
     border: 1px solid #4444ff;
+}
+#about {
+    text-align: right;
+    margin-right: 22px;
+    text-decoration: none;
+}
+#about a {
+    color: #2d2d2d;
+    border: 1px solid;
+    padding: 1px 4px;
+    text-decoration: none;
+
+}
+#about a:hover {
+    color: #ffffff;
+    background-color: #999;
 }

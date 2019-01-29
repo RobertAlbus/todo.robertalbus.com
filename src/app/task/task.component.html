@@ -1,3 +1,5 @@
+<div class="task" [ngClass]="{'complete': task.completed, 'incomplete': !task.completed}">
   <h2>{{ task.name }}</h2>
   <p>{{ task.description }}</p>
-  <a href="#" (click)="delete()">delete</a>
+  <a href="#" id="delete" (click)="delete()">delete</a>  
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { TaskManagerService } from './task-manager.service';
+import { TaskManagerService } from '../services/task-manager.service';
 
 @Component({
   selector: 'task-manager',

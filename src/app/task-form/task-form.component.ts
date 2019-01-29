@@ -11,7 +11,7 @@ import {
   Validators,
   AbstractControl} from '@angular/forms';
 import { Task } from '../task/task.interface';
-import { TaskManagerService } from '../task-manager/task-manager.service';
+import { TaskManagerService } from '../services/task-manager.service';
 
 @Component({
   selector:     'task-form',

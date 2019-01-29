@@ -1,8 +1,8 @@
 
 <h1>{{ title }}</h1>
-<div *ngFor="let task of taskList">
-  <task 
-    [task]="task"></task>
+<div *ngFor="let t of taskList">
+  <task class="complete"
+    [task]="t"></task>
 </div>
 
 

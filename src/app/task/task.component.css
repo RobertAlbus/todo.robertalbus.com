@@ -3,7 +3,8 @@
 .task {  
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  position: relative;
 }
 .complete {
   background-color: #6c6;
@@ -17,10 +18,14 @@
   padding: 1px 5px;
   margin: 0px;
   color: white;
-  border: 1px solid white;
+  border: 1px solid rgba(255,255,255,.4);
   text-decoration: none;
+
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 #delete:hover {
   color: black;
-  background-color: white;
+  background-color: white;;
 }
